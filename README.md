@@ -1,34 +1,13 @@
-# openrappter-beta
+# OpenRappter beta ring
 
-Ring **beta** (rank 3) of the OpenRappter release train.
+Beta points only at a **prerelease** promoted from a proven canary. This
+repository is a maintained pointer, not a divergent code copy.
 
-    canary -> nightly -> alpha -> beta -> stable
+The current [manifest](.ring/manifest.json) records the real
+`v0.1.0-beta.10` tag, exact commit, and measured GitHub archive SHA-256. It is
+`unpublished` because no verified installable OpenRappter beta ring artifact is
+available. `--ring beta` must fail closed rather than install something else.
 
-- **Publishes to:** `openrappter-beta` on npm — and nothing else.
-- **Promotes to:** `stable`
-- **Cut by:** hand-promoted from alpha
+Train: `nightly -> alpha -> canary -> beta -> stable`.
 
-## Install this ring
-
-```sh
-curl -fsSL https://kody-w.github.io/openrappter/install.sh | bash -s -- --channel beta
-```
-
-or directly:
-
-```sh
-npm install -g openrappter-beta
-```
-
-## Why a separate repo and package
-
-Production is **unreachable** from this repo, not merely guarded. This repo has
-no credentials for and no code path to the production `openrappter` package.
-Deleting this repo and its npm package outright would have zero effect on
-anyone running the released build.
-
-Promotion republishes the *identical tarball* under the next ring's package
-name — it never rebuilds, mirroring the exact-commit promotion rule of the rapp
-release train.
-
-Dashboard: https://kody-w.github.io/openrappter-release-train/
+Validate with `node scripts/validate-manifest.mjs .ring/manifest.json beta`.
