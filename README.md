@@ -16,3 +16,7 @@ Distribution invariant: beta must descend from finalized nightly, alpha, and
 canary receipts and is the final prerequisite before any stable/tag/npm/PyPI,
 GitHub release, or installer-channel publication. Release-train tests enforce
 the rule; there is no bypass flag.
+
+Target `main` files are informational and cannot replay latest. Clients trust
+only `openrappter-release-train/heads/beta.json`, its immutable finalized
+receipt, and the exact target manifest commit named there.
