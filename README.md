@@ -11,3 +11,8 @@ available. `--ring beta` must fail closed rather than install something else.
 Train: `nightly -> alpha -> canary -> beta -> stable`.
 
 Validate with `node scripts/validate-manifest.mjs .ring/manifest.json beta`.
+
+Distribution invariant: beta must descend from finalized nightly, alpha, and
+canary receipts and is the final prerequisite before any stable/tag/npm/PyPI,
+GitHub release, or installer-channel publication. Release-train tests enforce
+the rule; there is no bypass flag.
