@@ -20,3 +20,7 @@ the rule; there is no bypass flag.
 Target `main` files are informational and cannot replay latest. Clients trust
 only `openrappter-release-train/heads/beta.json`, its immutable finalized
 receipt, and the exact target manifest commit named there.
+
+Beta consumes the same tagged candidate bundle promoted by prior rings and
+records one immutable sequence acknowledgement. Continuous snapshot candidates
+remain non-stable and never satisfy the release constitution.
