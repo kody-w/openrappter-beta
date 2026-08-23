@@ -10,3 +10,9 @@ test('injection and future pointers fail closed', () => {
   assert.throws(() => validateManifest({ ...m, promoted_at: '2999-01-01T00:00:00Z' }, 'beta'));
 });
 test('published pointer requires install URL', () => assert.throws(() => validateManifest({ ...m, status: 'published', reason: null }, 'beta')));
+test('promotion receiver pulls immutable requests with only its GITHUB_TOKEN', () => {
+  const workflow = readFileSync(new URL('../.github/workflows/apply-promotion.yml', import.meta.url), 'utf8');
+  assert.doesNotMatch(workflow, /RING_AUTHORITY_TOKEN|repository_dispatch|secrets\./);
+  assert.match(workflow, /apply-request\.yml@[0-9a-f]{40}/);
+  assert.match(workflow, /contents: write/);
+});
