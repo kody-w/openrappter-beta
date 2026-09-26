@@ -1,5 +1,9 @@
 # OpenRappter beta ring
 
+<!-- rapp1:network-header:start -->
+[![RAPP/1](https://kody-w.github.io/rapp-hive-public/portfolio/badges/openrappter-beta.svg)](https://github.com/kody-w/rapp-hive-public/blob/main/portfolio/repos/openrappter-beta.md) · **New to RAPP?** [Start here: get your Brainstem →](https://github.com/kody-w/rapp-installer#start-here)
+<!-- rapp1:network-header:end -->
+
 Beta points only at a **prerelease** promoted from a proven canary. This
 repository is a maintained pointer, not a divergent code copy.
 
